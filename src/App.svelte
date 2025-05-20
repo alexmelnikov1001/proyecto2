@@ -10,7 +10,7 @@
   let grosorPartic = d3.scaleLinear()
     .domain(minMaxParticipations).range([2, 18])
 
-  /* 2. Escala para medallas (cuantitativo > diámetro círculo) */
+  /* 2. Escala para medallas (cuantitativo > diámetro círculo) *///
   const maxMedallas = d3.max(atletas, (d) => d.medallas)
   const diamMedallas = d3.scaleRadial()
     .domain([0, maxMedallas]).range([0, 100])
