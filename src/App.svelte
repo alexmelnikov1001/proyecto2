@@ -1,9 +1,97 @@
 <script>
   import * as d3 from "d3"
-  import atletas from "/src/data/athletes.csv"
-  // import atletas from "/src/data/athletes.json"
+  import futbolistas from "/src/data/athletes.csv"
 
-  console.log("atletas", atletas)
+  console.log("futbolistas", futbolistas)
+
+
+  function getBotin(color) {
+    if (color === "rojo") return "/images/botines/rojo.png";
+    if (color === "naranja") return "/images/botines/naranja.png";
+    if (color === "azul") return "/images/botines/azul.png";
+    if (color === "verde") return "/images/botines/verde.png";
+  }
+
+  function getCordones(cordones) {
+    if (cordones === "atados") return "/images/cordones/atados.png";
+    if (cordones === "desatados") return "/images/cordones/desatados.png";
+  }
+
+  function getPunta(punta) {
+    if (punta === "normal") return "/images/puntas/normal.png";
+    if (punta === "dorada") return "/images/puntas/dorada.png";
+  }
+
+  function getSuela(suela) {
+    if (suela === "nueva") return "/images/suelas/nueva.png";
+    if (suela === "usada") return "/images/suelas/usada.png";
+    if (suela === "gastada") return "/images/suelas/gastada.png";
+  }
+</script>
+
+<div class="container">
+  {#each futbolistas as f}
+    <div class="jugador">
+      <div class="botin-contenedor">
+        <img class="capa" src={getBotin(f.botin)} alt="botin" />
+        <img class="capa" src={getSuela(f.suela)} alt="suela" />
+        <img class="capa" src={getCordones(f.cordones)} alt="cordones" />
+        <img class="capa" src={getPunta(f.punta)} alt="punta" />
+      </div>
+      <p class="nombre">{f.nombre}</p>
+    </div>
+  {/each}
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .jugador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botin-contenedor {
+    position: relative;
+    width: 150px;
+    height: 150px;
+  }
+
+  .capa {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+  }
+
+  .nombre {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 
   /* 1. Escala para participaciones (cuantitativo > grosor) */
   const minMaxParticipations = d3.extent(atletas, (d) => d.participations)
@@ -46,10 +134,10 @@
     />
   </div>
 
-    <!-- Conedor de las entidades -->
+   Conedor de las entidades
     <div class="container">
       
-      <!-- Iteramos la data para visualizar c/ entidad -->
+      Iteramos la data para visualizar c/ entidad
       {#each atletas as atleta}
         <div class="person-container">
           <div
@@ -64,7 +152,6 @@
           </div>
         </div>
       {/each}
-      <!-- Fin iteración -->
 
     </div>
 </main>
@@ -137,3 +224,5 @@
     margin-bottom: 20px;
   }
 </style>
+
+-->
