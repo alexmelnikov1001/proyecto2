@@ -285,6 +285,15 @@ body.no-scroll {
   font-family: 'Futura', sans-serif;
   white-space: nowrap;
   transition: all 0.3s ease;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-destacado:focus,
+.nav-destacado:active {
+  outline: none !important;
+  background: none !important;
+  box-shadow: none !important;
 }
 
 .nav-separador {
