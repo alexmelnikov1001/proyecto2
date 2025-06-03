@@ -328,11 +328,11 @@
       <h2 class="leyenda-titulo atado">Atado del cordón</h2>
       <div class="fila-items fila-atado">
         <div class="item-leyenda atado">
-          <img src="/images/moño.png" alt="Jugador activo" />
+          <img src="/images/nudo.png" alt="Jugador activo" />
           <span>Jugador activo</span>
         </div>
         <div class="item-leyenda atado">
-          <img src="/images/no_moño.png" alt="Jugador retirado" />
+          <img src="/images/no_nudo.png" alt="Jugador retirado" />
           <span>Jugador retirado</span>
         </div>
       </div>
